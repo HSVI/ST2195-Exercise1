@@ -39,17 +39,42 @@ Please place your answer in the available code chunks below the question.
 
 ```{r}
 
+var1 = 5L
+var2 = 3L
+
 ```
 
 2. Add the two variables and save them as a new variable named var3 and print the result.
 
 ```{r}
 
+var3 <- var1 + var2
+
 ```
 
 3. Check the class, mode, and type for var1, var2, var3 and $\pi$ (is found under the variable name pi in R)
 
 ```{r}
+# for var1
+class(var1)
+storage.mode(var1)
+typeof(var1)
+
+# for var2
+class(var2)
+storage.mode(var2)
+typeof(var2)
+
+# for var3
+class(var3)
+storage.mode(var3)
+typeof(var3)
+
+# for pi
+class(pi)
+storage.mode(pi)
+typeof(pi)
+
 
 ```
 
@@ -57,17 +82,33 @@ Please place your answer in the available code chunks below the question.
 
 ```{r}
 
+text1 <- "This is text 1"
+text2 <- "This is text 2"
+
+#for text1
+class(text1)
+storage.mode(text1)
+typeof(text1)
+
 ```
 
 Add var1 from above to text1 and report the result.
 
 ```{r}
 
+print(var1+text1)
+
+#Error in var1 + text1 : non-numeric argument to binary operator
+
 ```
 
 5. Coerce or cast (force data type) var3 to integer, cast an integer variable to double, cast a string to a double.
 
 ```{r}
+
+as.integer(var3)
+as.double(var1)
+as.double(text1)
 
 ```
 
@@ -76,11 +117,17 @@ Check whether the floor of $\pi$ is an integer?
 
 ```{r}
 
+floor(pi)
+ceiling(pi)
+
+is.integer(floor(pi))
+
 ```
 
 7. Convert the ‘3.56437’ string as number.
 
 ```{r}
+as.numeric('3.56437')
 
 ```
 
@@ -88,10 +135,15 @@ Check whether the floor of $\pi$ is an integer?
 
 ```{r}
 
+print(Inf / -Inf)
+
 ```
 
 9. Create two freely chosen complex numbers.
 ```{r}
+
+cplx1 <- 4i+2
+cplx2 <- -3+2i
 
 ```
 
@@ -99,17 +151,32 @@ Check whether the floor of $\pi$ is an integer?
 * Check that they are complex indeed.
 ```{r}
 
+is.complex(cplx1)
+is.complex(cplx2)
+
 ```
 
 
 * Add, multiply and divide one by another.
 ```{r}
 
+#Addition
+sum_cplx <- cplx1+cplx2
+sum_cplx
+
+#multiplication
+cplx1*cplx2
+
+#division
+cplx1/cplx2
+
 ```
 
 
 * Add an integer to their sum.
 ```{r}
+
+sum_cplx+var1
 
 ```
 
@@ -118,6 +185,10 @@ Check whether the floor of $\pi$ is an integer?
 Raise the logical TRUE to the 7-th power.
 
 ```{r}
+
+TRUE*FALSE
+
+TRUE^7
 
 ```
 
@@ -134,6 +205,33 @@ Raise the logical TRUE to the 7-th power.
 * extract substring starting at the 5th character and 5 characters long.
 
 ```{r}
+
+# random text
+vrs1 = "In the quiet hush of morning light"
+vrs2 = "Dreams unfurl as stars take flight"
+
+# Concatenate the two variables
+paste(vrs1, vrs2)
+
+# Paste the variables with ‘*’ as separator
+paste(vrs1, vrs2, sep='*')
+
+# Detect if 'and' occurs in the second line
+if (str_detect(vrs2, fixed('and'))) {
+  print("'and' is found")
+} else {
+  print("'and' is not found")
+}
+
+# Substituting words
+old_word <- "morning"
+new_word <- "night"
+updated_text <- gsub(old_word, new_word, vrs1)
+
+print(updated_text)
+
+# Extract substring starting at the 5th character and 5 characters long
+substring(vrs1, 5, 9)
 
 ```
 
